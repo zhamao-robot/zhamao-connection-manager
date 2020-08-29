@@ -40,4 +40,12 @@ class ConnectionObject
     public function getOption($key) {
         return $this->options[$key] ?? null;
     }
+
+    public function setName(string $name) {
+        return SharedTable::$table->set(strval($this->fd), ['name' => $name]);
+    }
+
+    public function setOption($key, $value) {
+        return SharedTable::$table->set(strval($this->fd), [$key => $value]);
+    }
 }
