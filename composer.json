@@ -1,0 +1,24 @@
+{
+    "name": "zhamao/connection-manager",
+    "description": "A swoole-based multi-process connection manager using shared memory table",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "whale",
+            "email": "crazysnowcc@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2",
+        "swoole/ide-helper": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZM\\ConnectionManager\\": "src/ZM/ConnectionManager"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    }
+}
