@@ -3,6 +3,12 @@
 
 A swoole-based multi-process connection manager using shared memory table
 
+## 安装
+通过 Composer
+```bash
+composer require zhamao/connection-manager
+```
+
 ## 用法
 1.在 `Swoole\Server->start()` 前执行初始化：
 ```php
