@@ -11,5 +11,6 @@ class ManagerGMTest extends TestCase
         $this->assertEquals(true, ManagerGM::pushConnect(0));
         $this->assertEquals(true, ManagerGM::setName(0, "haha-0"));
         $this->assertEquals("haha-0", ManagerGM::get(0)->getName());
+        var_dump(\ZM\ConnectionManager\SharedTable::$table->get(1, 'name'));
     }
 }
