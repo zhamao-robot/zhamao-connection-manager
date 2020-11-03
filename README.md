@@ -1,4 +1,6 @@
 # zhamao-connection-manager 
+![https://packagist.org/packages/zhamao/connection-manager](https://img.shields.io/packagist/v/zhamao/connection-manager)
+
 一个基于 Swoole\Table 的简易 Websocket/HTTP 连接属性扩充管理器，兼容 Swoole 多进程的。
 
 A swoole-based multi-process connection manager using shared memory table
