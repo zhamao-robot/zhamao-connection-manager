@@ -60,7 +60,7 @@ class ManagerGM
     public static function get($fd)
     {
         $r = SharedTable::$table->get(strval($fd));
-        return $r !== false ? new ConnectionObject($fd, $r) : null;
+        return $r !== false ? new ConnectionObject($fd) : null;
     }
 
     /**
@@ -72,7 +72,7 @@ class ManagerGM
         $obj = [];
         foreach (SharedTable::$table as $k => $v) {
             if ($v["name"] == $name) {
-                $obj[] = new ConnectionObject($k, $v);
+                $obj[] = new ConnectionObject($k);
             }
         }
         return $obj;

@@ -7,13 +7,11 @@ namespace ZM\ConnectionManager;
 class ConnectionObject
 {
     private $fd;
-    private $name;
-    private $options;
+    private $str_fd;
 
-    public function __construct($fd, $obj) {
+    public function __construct($fd) {
         $this->fd = intval($fd);
-        $this->name = $obj["name"];
-        $this->options = $obj;
+        $this->str_fd = strval($fd);
     }
 
     /**
@@ -27,25 +25,25 @@ class ConnectionObject
      * @return mixed
      */
     public function getName() {
-        return $this->name;
+        return SharedTable::$table->get($this->str_fd, 'name');
     }
 
     /**
      * @return mixed
      */
     public function getOptions() {
-        return $this->options;
+        return SharedTable::$table->get($this->str_fd);
     }
 
     public function getOption($key) {
-        return $this->options[$key] ?? null;
+        return $this->getOptions()[$key] ?? null;
     }
 
     public function setName(string $name) {
-        return SharedTable::$table->set(strval($this->fd), ['name' => $name]);
+        return SharedTable::$table->set($this->str_fd, ['name' => $name]);
     }
 
     public function setOption($key, $value) {
-        return SharedTable::$table->set(strval($this->fd), [$key => $value]);
+        return SharedTable::$table->set($this->str_fd, [$key => $value]);
     }
 }
